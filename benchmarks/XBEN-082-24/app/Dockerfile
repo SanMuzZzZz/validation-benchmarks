@@ -1,4 +1,6 @@
 FROM python:3.8-slim
+RUN echo "deb http://archive.debian.org/debian buster main" > /etc/apt/sources.list \
+    && echo "deb http://archive.debian.org/debian-security buster/updates main" >> /etc/apt/sources.list
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends iputils-ping curl\

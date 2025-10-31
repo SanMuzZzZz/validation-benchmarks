@@ -1,5 +1,9 @@
 FROM php:7.4-apache
 
+RUN echo "deb http://archive.debian.org/debian buster main" > /etc/apt/sources.list \
+    && echo "deb http://archive.debian.org/debian-security buster/updates main" >> /etc/apt/sources.list
+
+
 RUN docker-php-ext-install mysqli
 
 RUN a2enmod rewrite

@@ -1,5 +1,8 @@
 FROM debian:bullseye-slim
 
+RUN echo "deb http://mirrors.ustc.edu.cn/debian bullseye main contrib non-free" > /etc/apt/sources.list \
+    && echo "deb http://mirrors.ustc.edu.cn/debian-security bullseye-security main contrib non-free" >> /etc/apt/sources.list
+
 RUN apt-get update && apt-get install -y python3 \
     python3-pip \
     curl \
